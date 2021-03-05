@@ -10,7 +10,7 @@
 
 3) Выполнить команду 
  
-    `git clone https://github.com/hillel-front-end/front-end-pro-online-november-2020.git`
+    `git clone https://github.com/hillel-front-end/front-end-pro-2021-march.git`
 
 4) Перейти в папку проекта
 
