@@ -2,6 +2,8 @@ console.log('Lecture 2');
 
 /*
 
+Lecture 2. Conditions, booleans, loops
+
 По домашним работам:
     – почему "0"
     – 3.33333333332
