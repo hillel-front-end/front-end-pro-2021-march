@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lecture 12. DOM</title>
+
+    <style>
+        .somename {
+            background: antiquewhite;
+        }
+        .somename2 h3 {
+            font-size: 30px;
+        }
+
+        /* block */
+        .user-card {
+            padding: 9px 15px;
+            border-radius: 3px;
+            /*border: 1px solid #727272;*/
+            position: relative;
+        }
+        .user-card:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border-top: 1px solid black;
+        }
+
+        /* element */
+        .user-card__name {
+            font-size: 12px;
+            transition: all 1s ease-in;
+            margin: 0;
+        }
+
+        img {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>Lecture 12. DOM</h3>
+
+    <div class='user-card'>
+        <div id='first-element'>1</div>
+        <div>2</div>
+<!--        <h5 class='user-card__name' style='color: red; font-size: 16px'>Alex</h5>-->
+        <h5 class='user-card__name'>Alex</h5>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
