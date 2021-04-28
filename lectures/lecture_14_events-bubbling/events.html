@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Распространение событий DOM Level 2</title>
+  <script>
+
+    // В модели DOM Level 2 события распространяются по следующему принципу:
+    // На этапе ПЕРЕХВАТА событие распространяется от Document вниз до целевого элемента управления.
+    // Второй этап - СОБЫТИЕ В ЦЕЛЕВОМ УЗЛЕ.
+    // На третьем этапе событие ВСПЛЫВАЕТ от целевого элемента обратно вверх до корневого элемента.
+
+    // последний параметр в методе addEventListener -
+    // true - обработать событие на этапе ПЕРЕХВАТА
+    // false - обработать событие на этапе ВСПЛЫВАНИЕ
+    // event.stopPropagation();
+
+    window.onload = function () {
+      var e1 = document.getElementById('first');
+      var e2 = document.getElementById('second');
+      var e3 = document.getElementById('third');
+
+      e1.addEventListener('click', function (event) {
+        event.stopImmediatePropagation();
+        console.log('  ----  e1_0 --- ')
+        this.style.backgroundColor = 'rgba(255,0,0,.7)';
+      }, true);
+
+      e1.addEventListener('click', function (event) {
+        console.log('  ----  e1_1 --- ')
+        this.style.backgroundColor = 'rgba(255,0,0,.7)';
+      }, true);
+
+      e2.addEventListener('click', function (event) {
+        console.log('  ----  e2 --- ')
+        this.style.backgroundColor = 'rgba(0,0,255,.7)';
+      });
+
+      e3.addEventListener('click', function (event) {
+        // event.stopImmediatePropagation()
+        // event.stopPropagation()
+        console.log('  ----  e3_0 --- ')
+        this.style.backgroundColor = 'rgba(0,255,0,.7)';
+      });
+
+      e3.addEventListener('click', function (event) {
+        console.log('  ----  e3_1 --- ')
+        this.style.backgroundColor = 'rgba(0,255,0,.7)';
+      });
+
+      // var e3events = {
+      //   'click' : [
+      //     f1,
+      //     function (){},
+      //     function (){},
+      //   ],
+      //   'mouseover' : [
+      //     function (){},
+      //     function (){},
+      //     function (){},
+      //   ],
+      // }
+
+    }
+  </script>
+
+  <style>
+      div {
+          border: 3px solid gray;
+          padding: 50px;
+          background-color: white;
+      }
+  </style>
+</head>
+<body>
+Первый
+<div id="first">
+  Второй
+  <div id="second">
+    Третий
+    <div id="third">
+    </div>
+  </div>
+</div>
+</body>
+</html>

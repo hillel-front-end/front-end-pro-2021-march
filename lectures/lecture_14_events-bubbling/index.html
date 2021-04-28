@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lecture 14. Events Bubbling</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .container:hover {
+            background: #f5cb8b;
+        }
+
+        .container__item {
+            margin: 50px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: antiquewhite;
+            cursor: pointer;
+        }
+
+        .container__item:hover {
+            background: #fddfb0;
+        }
+
+        .block {
+            cursor: pointer;
+            position: absolute;
+            top: 350px;
+            left: 200px;
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        table td, th{
+            padding: 10px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h3>Lecture 14. Events Bubbling</h3>
+
+<!--    <div class='container'>-->
+<!--        <div class='container__item' data-item-name='item 1' >item 1</div>-->
+<!--        <div class='container__item' data-item-name='item 2' >item 2</div>-->
+<!--        <div class='container__item' data-item-name='item 3' >item 3</div>-->
+<!--        <div class='container__item' data-item-name='item 4' >item 4</div>-->
+<!--    </div>-->
+
+<!--    <a href='https://gmail.com' target='_blank'>click me</a>-->
+
+<!--    <input type='text'>-->
+
+<!--    <div class='users-list'>-->
+<!--        <div class='user'>-->
+<!--            <button data-user-id='1'>delete</button>-->
+<!--            &lt;!&ndash; some info here &ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class='user'>-->
+<!--            <button data-user-id='2'>delete</button>-->
+<!--            &lt;!&ndash; some info here &ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class='user'>-->
+<!--            <button data-user-id='3'>delete</button>-->
+<!--            &lt;!&ndash; some info here &ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class='user'>-->
+<!--            <button data-user-id='4'>delete</button>-->
+<!--            &lt;!&ndash; some info here &ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class='block'>Block</div>-->
+
+<!--    <table>-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th></th>-->
+<!--                <th>name</th>-->
+<!--                <th>actions</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            <tr data-user-name='user 1'>-->
+<!--                <td><input type='checkbox'></td>-->
+<!--                <td>user 1</td>-->
+<!--                <td><button>delete</button></td>-->
+<!--            </tr>-->
+<!--            <tr data-user-name='user 2'>-->
+<!--                <td><input type='checkbox'></td>-->
+<!--                <td>user 2</td>-->
+<!--                <td><button>delete</button></td>-->
+<!--            </tr>-->
+<!--            <tr data-user-name='user 3'>-->
+<!--                <td><input type='checkbox'></td>-->
+<!--                <td>user 3</td>-->
+<!--                <td><button>delete</button></td>-->
+<!--            </tr>-->
+<!--            <tr data-user-name='user 4'>-->
+<!--                <td><input type='checkbox'></td>-->
+<!--                <td>user 4</td>-->
+<!--                <td><button>delete</button></td>-->
+<!--            </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+    <script src='index.js'></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lecture 14. Homework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            list-style: none;
+            border: 1px solid black;
+            padding: 0;
+        }
+
+        .menu li {
+            cursor: pointer;
+            padding: 10px;
+            margin: 0;
+            border-top: 1px solid black;
+        }
+
+        .menu li:hover {
+            background: #fddfb0;
+        }
+
+        .menu li:first-child {
+            border: 0;
+        }
+
+        .menu.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul class='menu hidden' id='menu'>
+       <li>Jump</li>
+       <li>Move to start</li>
+       <li>Change color</li>
+       <li>Display coords </li>
+    </ul>
+    <script src='homework.js'></script>
+</body>
+</html>
