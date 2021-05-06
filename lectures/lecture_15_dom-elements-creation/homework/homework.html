@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Folders Homework</title>
+  <style>
+      .container {
+          width: 600px;
+          height: 600px;
+          border: 1px solid black;
+          display: flex;
+          margin: 0 auto;
+      }
+
+      .section {
+          flex: 1;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          border-left: 1px solid black;
+      }
+
+      .section:first-child {
+          border-left: 0;
+      }
+
+      .section__title {
+          padding: 10px 20px;
+          font-weight: 600;
+          font-size: 18px;
+          border-bottom: 1px solid black;
+          margin: 0
+      }
+
+      .section__list {
+          flex: 1;
+          overflow: auto;
+          padding-top: 10px;
+      }
+
+      .folder {
+          padding: 10px 20px;
+          font-size: 16px;
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .folder__action-button {
+          position: relative;
+      }
+
+      .folder__action-button-title {
+          cursor: pointer;
+          font-size: 10px;
+          text-transform: uppercase;
+          font-weight: bold;
+          opacity: 0.9;
+      }
+
+      .folder__action-button:hover .folder__actions {
+          display: block;
+      }
+
+      .folder__actions {
+          z-index: 1;
+          width: 200px;
+          position: absolute;
+          padding-top: 10px;
+          top: 100%;
+          right: 0;
+          display: none;
+          background: #ffffff;
+      }
+
+      .folder__action-item {
+          padding: 4px;
+          border: 1px solid black;
+          border-bottom: 0;
+          text-transform: uppercase;
+          font-size: 12px;
+          cursor: pointer;
+      }
+
+      .folder__action-item:last-child {
+          border-bottom: 1px solid black;
+      }
+
+      .folder__action-item:hover {
+          background: #f6d199;
+      }
+
+  </style>
+</head>
+<body>
+<div class='container'>
+  <div class='section' id='folders'>
+    <div class='section__title'>
+      Your Folders
+    </div>
+    <div class='section__list'></div>
+  </div>
+  <div class='section' id='archive'>
+    <div class='section__title'>
+      Archive
+    </div>
+    <div class='section__list'></div>
+  </div>
+  <script src='homework.js'></script>
+</div>
+</body>
+</html>
