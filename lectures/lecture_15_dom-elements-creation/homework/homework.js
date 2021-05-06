@@ -45,10 +45,10 @@ function deleteFolder(folder) {
 
 }
 
-function moveFolderToArchive(folder) {
+function archiveFolder(folder) {
 
 }
 
-function restoreFromArchive(folder) {
+function restoreFolder(folder) {
 
 }
