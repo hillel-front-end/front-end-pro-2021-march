@@ -19,10 +19,9 @@ let durationValue;
 
 function updateBars() {
   const amountInYears = initialAmountValue + percentsValue / 100 * initialAmountValue * durationValue;
-  const k = (amountInYears / initialAmountValue * 100 - 100) / 100;
 
   const maxHeight = 200;
-  initialBar.style.height = maxHeight - maxHeight * k + 'px';
+  initialBar.style.height = maxHeight * initialAmountValue / amountInYears + 'px';
   resultBar.style.height = maxHeight + 'px';
 }
 
