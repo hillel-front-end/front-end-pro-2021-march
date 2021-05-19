@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework 13_1</title>
+  <style>
+      input {
+          margin: 0;
+      }
+
+      .bars {
+          display: flex;
+          align-items: flex-start;
+      }
+
+      .bar {
+          display: inline-block;
+          width: 50px;
+          height: 0;
+          max-height: 200px;
+          transition: all 0.2s ease-in;
+      }
+
+      .bar--initial {
+          background: red;
+      }
+
+      .bar--resulting {
+          background: blue;;
+      }
+  </style>
+</head>
+<body>
+
+
+<!-- https://ru.bem.info/ -->
+
+<h2>Депозитный калькулятор</h2>
+<form id='calculator'>
+  <table>
+    <tr>
+      <td><label for='initial-amount'>Первоначальный депозит</label></td>
+      <td><input id='initial-amount'></td>
+    </tr>
+    <tr>
+      <td><label for='percents'>Процентная ставка</label></td>
+      <td><input id='percents'></td>
+    </tr>
+    <tr>
+      <td><label for='duration'>Срок</label></td>
+      <td><input id='duration'></td>
+    </tr>
+<!--    <tr>-->
+<!--      <td><label for='calc-on-change'>Пересчитывать при вводе?</label></td>-->
+<!--      <td><input type='checkbox' id='calc-on-change' /></td>-->
+<!--    </tr>-->
+  </table>
+  <div class='bars'>
+    <div class='bar bar--initial' id='initial-amount-bar'></div>
+    <div class='bar bar--resulting' id='result-amount-bar'></div>
+  </div>
+</form>
+<script src='homework-13-1.js'></script>
+</body>
+</html>
