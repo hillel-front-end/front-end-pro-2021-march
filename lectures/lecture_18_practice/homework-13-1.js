@@ -1,45 +1,40 @@
-console.log('homework');
+const baseInput = document.querySelector('#base');
+const durationInput = document.querySelector('#duration');
+const rateInput = document.querySelector('#rate');
 
-const initialAmount = document.querySelector('#initial-amount');
-const duration = document.querySelector('#duration');
-const percents = document.querySelector('#percents');
+const baseBar = document.querySelector('#base-bar');
+const baseBarLabel = document.querySelector('#base-bar .bar__label');
+const resultBar = document.querySelector('#result-bar');
+const resultBarLabel = document.querySelector('#result-bar .bar__label');
 
+document.forms.calculator.addEventListener('input', onChange)
 
-const initialBar = document.querySelector('#initial-amount-bar');
-const resultBar = document.querySelector('#result-amount-bar');
+function onChange() {
+  const base = parseInt(baseInput.value);
+  const duration = parseInt(durationInput.value);
+  const rate = parseInt(rateInput.value);
 
+  if (!base || !duration || !rate) {
+    return;
+  }
 
-initialAmount.addEventListener('input', handleInitialAmountChange);
-percents.addEventListener('input', handlePercentsChange);
-duration.addEventListener('input', handleDurationChange);
+  const result = getResultAmount(base, rate, duration * 12);
+  drawChart(base, result);
+}
 
-let initialAmountValue;
-let percentsValue;
-let durationValue;
+function getResultAmount(S, P, M) {
+  // Формула для вкладов с ежемесячной капитализацией
+  // https://damoney.ru/finance/slozniy-procent.php
+  // S – внесенная при заключении договора сумма;
+  // P – годовая % ставка;
+  // M – кол-во месяцев, на которые открыли вклад;
+  return S + Math.round(S * Math.pow(1 + P / 100 / 12, M) - S);
+}
 
-function updateBars() {
-  const amountInYears = initialAmountValue + percentsValue / 100 * initialAmountValue * durationValue;
-
+function drawChart(base, result) {
   const maxHeight = 200;
-  initialBar.style.height = maxHeight * initialAmountValue / amountInYears + 'px';
+  baseBar.style.height = maxHeight * (base / result) + 'px';
   resultBar.style.height = maxHeight + 'px';
-}
-
-function handleInitialAmountChange(e) {
-  const value = parseInt(e.target.value);
-  initialAmountValue = value;
-  updateBars();
-}
-
-function handlePercentsChange(e) {
-  const value = parseInt(e.target.value);
-  percentsValue = value;
-  updateBars();
-
-}
-
-function handleDurationChange(e) {
-  const value = parseInt(e.target.value);
-  durationValue = value;
-  updateBars();
+  baseBarLabel.innerHTML = '$' + base.toLocaleString();
+  resultBarLabel.innerHTML = '$' + result.toLocaleString();
 }

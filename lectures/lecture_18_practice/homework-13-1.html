@@ -10,24 +10,39 @@
           margin: 0;
       }
 
-      .bars {
+      .chart {
+          margin-top: 15px;
           display: flex;
-          align-items: flex-start;
+          align-items: flex-end;
+          position: relative;
+          height: 200px;
+          width: 200px;
+          border: 1px solid #eaeafa;
+          background: #fefefe;
       }
 
       .bar {
-          display: inline-block;
-          width: 50px;
-          height: 0;
-          transition: all 0.2s ease-in;
+          width: 80px;
+          transition: all 0.3s ease-in;
+          overflow: hidden;
+          position: relative;
+          color: rgba(0, 0, 0, 0.51);
       }
 
       .bar--initial {
-          background: red;
+          background: #d5e3ff;
       }
 
       .bar--resulting {
-          background: blue;;
+          margin-left: 20px;
+          background: #adc6ff;
+      }
+
+      .bar__label {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
       }
   </style>
 </head>
@@ -40,25 +55,29 @@
 <form id='calculator'>
   <table>
     <tr>
-      <td><label for='initial-amount'>Первоначальный депозит</label></td>
-      <td><input id='initial-amount'></td>
+      <td><label for='base'>Первоначальный депозит</label></td>
+      <td><input id='base'></td>
     </tr>
     <tr>
-      <td><label for='percents'>Процентная ставка</label></td>
-      <td><input id='percents'></td>
+      <td><label for='rate'>Процентная ставка</label></td>
+      <td><input id='rate'></td>
     </tr>
     <tr>
       <td><label for='duration'>Срок</label></td>
       <td><input id='duration'></td>
     </tr>
-<!--    <tr>-->
-<!--      <td><label for='calc-on-change'>Пересчитывать при вводе?</label></td>-->
-<!--      <td><input type='checkbox' id='calc-on-change' /></td>-->
-<!--    </tr>-->
+    <!--    <tr>-->
+    <!--      <td><label for='calc-on-change'>Пересчитывать при вводе?</label></td>-->
+    <!--      <td><input type='checkbox' id='calc-on-change' /></td>-->
+    <!--    </tr>-->
   </table>
-  <div class='bars'>
-    <div class='bar bar--initial' id='initial-amount-bar'></div>
-    <div class='bar bar--resulting' id='result-amount-bar'></div>
+  <div class="chart">
+    <div class='bar bar--initial' style='height: 0' id='base-bar'>
+      <span class='bar__label'></span>
+    </div>
+    <div class='bar bar--resulting' style='height: 0' id='result-bar'>
+      <span class='bar__label'></span>
+    </div>
   </div>
 </form>
 <script src='homework-13-1.js'></script>
