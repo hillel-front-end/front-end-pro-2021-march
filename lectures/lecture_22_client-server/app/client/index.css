@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.max-width {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    margin-top: 30px;
+}
+
+.main {
+    flex: 1;
+}
+
+.sidebar {
+    min-width: 240px;
+}
+
+.subtitle {
+    font-size: 20px
+}
+
+.news-list {
+    margin-right: 20px;
+    border-top: 1px solid black;
+}
+
+.news-list .news-item:first-child {
+    border-top: 0
+}
+
+.news-item {
+    border-top: 1px solid black;
+    padding: 20px;
+}
+
+.news-item__title {
+    margin: 0;
+}
+
+.news-categories {
+    border-top: 1px solid black;
+}

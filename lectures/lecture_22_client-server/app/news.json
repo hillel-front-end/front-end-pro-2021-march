@@ -1,0 +1,17 @@
+[
+  {
+    "id"      : 1,
+    "title"   : "Lorem Ipsum",
+    "content" : "Lorem ipsum dolor, consectetur adipisicing elit. Adipisci amet assumenda atque commodi consectetur dolorem dolorum est et exercitationem fugit harum hic ipsa iste labore laborio sam laborum maiores maxime minima molestias nihil nobis non numquam omnis optio placeat quaerat quasi saepe, sapiente similique, tenetur, veritatis voluptatem voluptates voluptatibus! Praesentium, reprehenderit."
+  },
+  {
+    "id"      : 2,
+    "title"   : "Dolor Sit",
+    "content" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet assumenda atque commodi"
+  },
+  {
+    "id"      : 3,
+    "title"   : "My Third News",
+    "content" : "Adipisci amet assumenda atque commodi"
+  }
+]
