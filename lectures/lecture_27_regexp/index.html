@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lecture 27. RegExp</title>
+</head>
+<body>
+<h1>Lecture 27. RegExp</h1>
+<input type="text" id="phone" name="test">
+<pre id="result"></pre>
+<script src="index.js"></script>
+<script>
+
+  // const terms = [
+  //   'preloader',
+  //   'prepend',
+  //   'append',
+  //   'in the end',
+  //   'ending',
+  // ]
+  //
+  // const result = document.querySelector('#result');
+  // const input = document.querySelector('#phone');
+
+  // input.addEventListener('paste', function(e) {
+  //   // "Vasya Pupkin" <vasya@pupkin.com>
+  //   const text = e.clipboardData.getData('Text');
+  //   window.dddd = text.matchAll(/"(.+)" <(.+)>/g)
+  //   const matched = Array.from(text.matchAll(/"(.+)" <(.+)>/g));
+  //   result.innerHTML = `Email is: ${matched[0][2]}<br/>Name is: ${matched[0][1]}`
+  // })
+
+  // input.addEventListener('input', function (e) {
+  //   const value = e.target.value;
+  //   const termsHTML = terms
+  //     .filter(function (term) {
+  //       return term.includes(e.target.value);
+  //     })
+  //     .map(function (term) {
+  //       return term.replace(new RegExp('(' + value + ')'), '<b>$1</b>')
+  //     })
+  //   result.innerHTML = termsHTML.join('<br/>');
+  // })
+
+  // input.addEventListener('keydown', function(e) {
+  //   const formattedPhone = e.target.value.replace(/(\d{3})\s?(\d{3})\s?(\d{2})\s?(\d{2})/, "<b>($1)</b> $2 $3 $4");
+  //   result.innerHTML = formattedPhone;
+  // })
+
+  // input.addEventListener('input', function(e) {
+  //    e.target.value = e.target.value.replace(/\D/g, "").match(/(\d{0,5})/)[0]
+  // })
+
+
+</script>
+</body>
+</html>
