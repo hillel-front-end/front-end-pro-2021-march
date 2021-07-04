@@ -33,6 +33,7 @@ Demos
  */
 
 /**
+ * процесс запуска кода
 1) takes the contents of the input file;
 2) wraps it in a function;
 3) associates that function as an event handler that is associated with the “start” or “launch” event of the program;
