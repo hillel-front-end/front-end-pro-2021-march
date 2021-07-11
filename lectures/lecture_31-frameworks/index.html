@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <style>
+    .yellow-p {
+        background: yellow;
+    }
+  </style>
+  <title>Lecture 31. Frameworks</title>
+</head>
+<body>
+<h1>Lecture 31. Frameworks</h1>
+<div id="app"></div>
+<!--<div id="like_button_container"></div>-->
+<script type="text/babel">
+
+  const users = [
+    { firstName : 'June', lastName : 'Moreno' },
+    { firstName : 'Vincent', lastName : 'Moore' },
+    { firstName : 'Allen', lastName : 'Ortiz' },
+    { firstName : 'A222llen', lastName : 'Or222tiz' },
+  ];
+
+  function AddUserButton(props) {
+    return <button onClick={props.onMyClick}>add user</button>
+  }
+
+  function UsersList() {
+    const [usersList, setUsersList] = React.useState(users);
+
+    function addUser() {
+      const usersCopy = usersList.slice();
+      usersCopy.push({ firstName : "vasya", lastName: "user"});
+      setUsersList(usersCopy)
+    }
+
+    return (
+      <div>
+        {usersList.map((item, index) => {
+          const isEven = (index + 1) % 2 === 0;
+          return (
+            <p key={index} className={isEven ? 'yellow-p' : ''} style={{ fontSize: isEven ? 16 : 20 }}>{item.firstName} {item.lastName}</p>
+          )
+        })}
+        <AddUserButton onMyClick={addUser} />
+      </div>
+    )
+  }
+
+  const appContainer = document.querySelector('#app');
+  ReactDOM.render(<UsersList />, appContainer);
+
+  // const users = [
+  //   { firstName : 'June', lastName : 'Moreno' },
+  //   { firstName : 'Vincent', lastName : 'Moore' },
+  //   { firstName : 'Allen', lastName : 'Ortiz' },
+  //   { firstName : 'A222llen', lastName : 'Or222tiz' },
+  // ];
+
+  // const myDiv = document.createElement('div');
+  // myDiv.innerHTML = `<div>${users.map(item => "<p>" + item.firstName + ' ' + item.lastName + "</p>").join('')}</div>`;
+  // document.body.append(myDiv);
+
+  // const haveUsers = users.length;
+  // const isButtonVisible = false;
+  //
+  // const myDiv = (
+  //   <div>
+  //
+  //     {haveUsers ? "we have users" : "no one is here"}
+  //
+  //     {users.map((item, index) => {
+  //       return (
+  //         <p style={{ fontSize: index % 2 === 0 ? 16 : 20 }}>{item.firstName} {item.lastName}</p>
+  //       )
+  //     })}
+  //
+  //     {isButtonVisible && (
+  //       <button>my button</button>
+  //     )}
+  //   </div>
+  // );
+
+  // const appContainer = document.querySelector('#app');
+  // ReactDOM.render(myDiv, appContainer);
+
+  // class LikeButton extends React.Component {
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = { liked: false };
+  //   }
+  //
+  //   render() {
+  //     if (this.state.liked) {
+  //       return 'You liked this.';
+  //     }
+  //
+  //     return React.createElement(
+  //       'button',
+  //       { onClick: () => this.setState({ liked: true }) },
+  //       'Like'
+  //     );
+  //
+  //     return (
+  //       <button onClick={() => this.setState({ liked: true })}>
+  //         Нравится
+  //       </button>
+  //     );
+  //   }
+  // }
+
+  // const domContainer = document.querySelector('#like_button_container');
+  // ReactDOM.render(e(LikeButton), domContainer);
+</script>
+</body>
+</html>
